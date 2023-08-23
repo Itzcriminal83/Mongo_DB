@@ -3,7 +3,7 @@
     "env": {
         "session_name": {
             "description": "session_name",
-            "required": true
+            "required": false
         },
         "BOT_TOKEN": {
             "description": "telegram bot token here",
