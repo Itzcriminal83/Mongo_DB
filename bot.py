@@ -21,7 +21,7 @@ async def _start(_, msg: Message):
     START = """
 **Hii {}**, `ɪ ᴀᴍ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ ᴄʜᴇᴄᴋᴇʀ ʙᴏᴛ, ᴊᴜsᴛ sᴇɴᴅ ᴍᴇ ʏᴏᴜʀ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ ɪ ᴡɪʟʟ ᴛᴇʟʟ ʏᴏᴜʀ ᴜʀʟ ʜᴀᴠɪɴɢ ᴀɴʏ ɪssᴜᴇs ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴏʀ ɴᴏᴛ.`
 
-__|| ᴍᴀᴅᴇ ᴡɪᴛʜ 🖤 ʙʏ [×͜× ᴄ͢͢͢ʀɪᴍɪɴᴧʟ࿐](https://t.me/CRiMinAl_B0Y) 🥀 ||"__.
+__|| ᴍᴀᴅᴇ ᴡɪᴛʜ 🖤 ʙʏ [×͜× ᴄ͢͢͢ʀɪᴍɪɴᴧʟ࿐](https://t.me/CRiMinAl_B0Y) 🥀 ||__.
 """
     await msg.reply(START.format(msg.from_user.mention), disable_web_page_preview=True)
 
