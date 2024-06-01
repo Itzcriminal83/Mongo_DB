@@ -23,8 +23,14 @@ async def _start(_, msg: Message):
 
 __|| ᴍᴀᴅᴇ ᴡɪᴛʜ 🖤 ʙʏ [×͜× ᴄ͢͢͢ʀɪᴍɪɴᴧʟ࿐](https://t.me/CRiMinAl_B0Y) 🥀 ||__.
 """
-    await msg.reply(START.format(msg.from_user.mention), disable_web_page_preview=True)
-
+    await app.send_photo(
+        chat_id=message.chat.id,
+        photo=random.choice(start_pics),
+        caption=f"нєу {message.from_user.first_name},\n ᴛʜɪs ɪs {app.mention},\n\nᴀ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ ᴄʜᴇᴄᴋᴇʀ ʙᴏᴛ, ᴊᴜsᴛ sᴇɴᴅ ᴍᴇ ʏᴏᴜʀ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ ɪ ᴡɪʟʟ ᴛᴇʟʟ ʏᴏᴜʀ ᴜʀʟ ʜᴀᴠɪɴɢ ᴀɴʏ ɪssᴜᴇs ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴏʀ ɴᴏᴛ.",
+        has_spoiler=True,
+        protect_content=True,
+        reply_markup=start_key,
+    )
 
 @bot.on_message(filters.private & filters.text & ~filters.command(["start", "check"]))
 async def _private_filter(_, msg: Message):
