@@ -1,10 +1,6 @@
 {
     "name": "bc",    
     "env": {
-        "session_name": {
-            "description": "session_name",
-            "required": false
-        },
         "BOT_TOKEN": {
             "description": "telegram bot token here",
             "required": true
