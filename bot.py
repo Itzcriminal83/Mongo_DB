@@ -1,11 +1,12 @@
 import re
 import os
+import random
 import pymongo
 import urllib
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
-
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 bot = Client(
     name="MongoBot",
@@ -16,13 +17,28 @@ bot = Client(
 )
 
 
+start_key = InlineKeyboardMarkup(
+    [
+        [
+            InlineKeyboardButton(text="×͜× ᴄ͢͢͢ʀɪᴍɪɴᴧʟ࿐", https://t.me/CRiMinAl_B0Y")
+        ]
+    ]
+)
+
+
+start_pics = [
+    "https://te.legra.ph/file/be886890e66873984048f.jpg",
+    "https://te.legra.ph/file/963fd1b8a5dbf20961e14.jpg",
+    "https://te.legra.ph/file/ca11c6cfeb08c92f979a2.jpg",
+    "https://te.legra.ph/file/6dc1bf48936cda7fa9371.jpg",
+    "https://te.legra.ph/file/3c11427d0ed3719351da6.jpg",
+    "https://te.legra.ph/file/78c22cf0faa8094ead29c.jpg",
+    "https://te.legra.ph/file/4352eb1387b752dedb491.jpg",
+]
+
+
 @bot.on_message(filters.command("start"))
 async def _start(_, msg: Message):
-    START = """
-**ʜɪɪ {}**, `ɪ ᴀᴍ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ ᴄʜᴇᴄᴋᴇʀ ʙᴏᴛ, ᴊᴜsᴛ sᴇɴᴅ ᴍᴇ ʏᴏᴜʀ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ ɪ ᴡɪʟʟ ᴛᴇʟʟ ʏᴏᴜʀ ᴜʀʟ ʜᴀᴠɪɴɢ ᴀɴʏ ɪssᴜᴇs ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴏʀ ɴᴏᴛ.`
-
-__|| ᴍᴀᴅᴇ ᴡɪᴛʜ 🖤 ʙʏ [×͜× ᴄ͢͢͢ʀɪᴍɪɴᴧʟ࿐](https://t.me/CRiMinAl_B0Y) 🥀 ||__.
-"""
     await app.send_photo(
         chat_id=message.chat.id,
         photo=random.choice(start_pics),
