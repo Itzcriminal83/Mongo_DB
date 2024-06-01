@@ -1,16 +1,19 @@
 {
-    "name": "bc",    
+    "name": "MONGO DB",    
     "env": {
         "BOT_TOKEN": {
             "description": "telegram bot token here",
+            "value": "6865147782:AAHR8MMwV0zs7Z_lKA-dKjD5LomUmPRWboM",
             "required": true
         },        
         "API_ID": {
             "description": "telegram api id here",
+            "value": "17097054",
             "required": true
         },
         "API_HASH": {
             "description": "telegram api hash here",
+            "value": "7d4ad6cc94b26157dacf1afe3b3e4b58",
             "required": true
         }
     },
