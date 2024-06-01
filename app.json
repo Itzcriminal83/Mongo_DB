@@ -3,7 +3,7 @@
     "env": {
         "BOT_TOKEN": {
             "description": "telegram bot token here",
-            "value": "6865147782:AAHR8MMwV0zs7Z_lKA-dKjD5LomUmPRWboM",
+            "value": "",
             "required": true
         },        
         "API_ID": {
