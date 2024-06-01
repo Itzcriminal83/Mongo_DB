@@ -42,13 +42,16 @@ START_TXT = """
 
 @bot.on_message(filters.command("start"))
 async def _start(_, msg: Message):
+    chat_id = msg.chat.id  # Get the chat ID from the message object
     await bot.send_photo(
+        chat_id=chat_id,  # Pass the chat ID as an argument
         photo=random.choice(start_pics),
-        caption=START_TXT,
+        caption=START_TXT.format(msg.chat.first_name),  # Personalize the message
         has_spoiler=True,
         protect_content=True,
         reply_markup=start_key,
     )
+
 
 @bot.on_message(filters.private & filters.text & ~filters.command(["start", "check"]))
 async def _private_filter(_, msg: Message):
