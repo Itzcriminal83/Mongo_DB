@@ -40,7 +40,6 @@ start_pics = [
 @bot.on_message(filters.command("start"))
 async def _start(_, msg: Message):
     await bot.send_photo(
-        chat_id=message.chat.id,
         photo=random.choice(start_pics),
         caption=f"нєу {message.from_user.first_name},\n ᴛʜɪs ɪs {app.mention},\n\nᴀ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ ᴄʜᴇᴄᴋᴇʀ ʙᴏᴛ, ᴊᴜsᴛ sᴇɴᴅ ᴍᴇ ʏᴏᴜʀ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ ɪ ᴡɪʟʟ ᴛᴇʟʟ ʏᴏᴜʀ ᴜʀʟ ʜᴀᴠɪɴɢ ᴀɴʏ ɪssᴜᴇs ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴏʀ ɴᴏᴛ.",
         has_spoiler=True,
