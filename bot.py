@@ -10,9 +10,9 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 bot = Client(
     name="MongoBot",
-    api_id=int(os.environ["API_ID"]),
-    api_hash=os.environ["API_HASH"],
-    bot_token=os.environ["BOT_TOKEN"],
+    api_id=int(os.environ["17097054"]),
+    api_hash=os.environ["7d4ad6cc94b26157dacf1afe3b3e4b58"],
+    bot_token=os.environ["6865147782:AAHR8MMwV0zs7Z_lKA-dKjD5LomUmPRWboM"],
     in_memory=True,
 )
 
