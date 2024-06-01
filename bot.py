@@ -20,7 +20,7 @@ bot = Client(
 start_key = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(text="×͜× ᴄ͢͢͢ʀɪᴍɪɴᴧʟ࿐", https://t.me/CRiMinAl_B0Y")
+            InlineKeyboardButton(text="Dᴇᴠᴇʟᴏᴘᴇʀ", url="https://t.me/CRiMinAl_B0Y")
         ]
     ]
 )
