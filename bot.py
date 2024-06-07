@@ -79,33 +79,14 @@ async def check_url(msg: Message, url: str):
     match = re.match(PATTERN, url)
     if not match:   
         return await msg.reply(f"**ɪɴᴠᴀʟɪᴅ ᴍᴏɴɢᴏᴅʙ ᴜʀʟ**: `{url}`")
+    username, password, key, dbname = match.group(2), match.group(3), match.group(4), match.group(5)
+    if s_r.search(username) or s_r.search(password):
+        return await msg.reply(f"**ɪɴᴠᴀʟɪᴅ ᴜsᴇʀɴᴀᴍᴇ ᴀɴᴅ ᴘᴀssᴡᴏʀᴅ**: `{username}` and `{password}` must be escaped.")
     try: 
         pymongo.MongoClient(url)
     except Exception as e:
-        if "Username and password must be escaped" in str(e):
-            if bool(match.group(1)):
-                raw_url = "mongodb+srv://{}:{}@cluster0.{}.mongodb.net/{}?retryWrites=true&w=majority"
-            else:
-                raw_url = "mongodb://{}:{}@cluster0.{}.mongodb.net/{}?retryWrites=true&w=majority"
-            username, password, key, dbname = match.group(2), match.group(3), match.group(4), match.group(5)
-            if s_r.search(username):
-                username = urllib.parse.quote_plus(username)
-            if s_r.search(password):
-                password = urllib.parse.quote_plus(password)
-            if '<' or '>' in dbname:
-                dbname = "Userge"
-            new_url = raw_url.format(username, password, key, dbname)
-            await msg.reply( 
-                "`ʏᴏᴜʀ ᴜʀʟ ʜᴀᴠɪɴɢ ɪɴᴠᴀʟɪᴅ ᴜsᴇʀɴᴀᴍᴇ ᴀɴᴅ ᴘᴀssᴡᴏʀᴅ.`\n\n"
-                "`ɪ ǫᴜᴏᴛᴇᴅ ʏᴏᴜʀ ᴜsᴇʀɴᴀᴍᴇ ᴀɴᴅ ᴘᴀssᴡᴏʀᴅ ᴀɴᴅ ᴄʀᴇᴀᴛᴇᴅ ɴᴇᴡ DB_URI, "
-                f"ᴜsᴇ ᴛʜɪs ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴍᴏɴɢᴏᴅʙ.`\n\n`{new_url}`"
-            )
-    else:
-        if ('<' or '>') in match.group(5):
-            dbname = "Userge"
-            new_url = url.replace(match.group(5), dbname)
-            return await msg.reply(f"`you forgot to remove '<' and '>' signs.`\n\n**Use this URL:** `{new_url}`")
-        await msg.reply("`ᴛʜɪs ᴜʀʟ ɪs ᴇʀʀᴏʀ ғʀᴇᴇ. ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴍᴏɴɢᴏᴅʙ.`")
+        return await msg.reply(f"**ᴇʀʀᴏʀ**: `{e}`")
+    await msg.reply("`ᴛʜɪs ᴜʀʟ ɪs ᴇʀʀᴏʀ ғʀᴇᴇ. ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ᴛᴏ ᴄᴏɴɴᴇᴄᴛ ᴛᴏ ᴍᴏɴɢᴏᴅʙ.`")
 
 
 if __name__ == "__main__":
